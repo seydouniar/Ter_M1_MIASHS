@@ -1,1 +1,3 @@
-tamer
+VENDREDI 22 septembre :
+ mise a niveau de git et python pour tout le monde
+ analyse et test de l’algorithme de relim avec la librairie pymining
