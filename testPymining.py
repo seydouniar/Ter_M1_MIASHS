@@ -1,8 +1,5 @@
-#!/usr/bin/env python
-import codecs
-
 from pymining import itemmining
-txt = open("Sans_titre.txt",encoding='utf-8').read()
+txt = open("/Users/Eloan/Desktop/Ter_M1_MIASHS/Sans_titre.txt").read()
 list_phrase=txt.split(".")
 print(list_phrase)
 transactions = (('a', 'b', 'c'), ('b'), ('a'), ('a', 'c', 'd'), ('b', 'c'), ('b', 'c'))
