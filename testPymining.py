@@ -1,12 +1,13 @@
 #!/usr/bin/env python
+import codecs
 from pymining import itemmining
 from pymining import seqmining
 from pymining import perftesting
 
-txt = open("Sans_titre.txt".encode("utf-8")).read()
-print(txt)
-txt=str(txt)
-list_phrase=txt.split(".")
+txt =codecs.open("Sans_titre.txt",'r','utf-8')
+a=txt.read()
+list_phrase=a.split(".")
+print(list_phrase)
 List_phrases=[]
 key_word=[]
 
