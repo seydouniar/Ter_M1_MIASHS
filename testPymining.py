@@ -10,8 +10,13 @@ list_phrase=a.split(".")
 print(list_phrase)
 List_phrases=[]
 key_word=[]
-
+codecs.close("Sans_titre.txt")
 for i in range(len(list_phrase)-1):
+    phrase.replace("\\n","")
+    phrase.replace(',',"")
+    phrase.replace('!',"")
+    phrase.replace('?',"")
+    phrase.replace(';',"")
     List_phrases.append(list_phrase[i].split(" "))
     key_word.append(i)
 
