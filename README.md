@@ -18,3 +18,9 @@
 	
 - 4 Faire 1 présentation qui explique motif sequentiel
 
+- 5 Exécution de ana_mot.py
+	- configuration:
+		- Installer mongodb si c'est pas déjà fait 
+		- changer le path de mongo avec (mongod --dbpath Fichiers)
+		- Importer la base ( mongoimport --db dico -- collection dictionnaires --file files/mots_expressions.json). Attention lors d'un push supprimer les fichiers générés par mongo.
+
