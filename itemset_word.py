@@ -8,13 +8,13 @@ txt =codecs.open("Sans_titre.txt",'r','utf-8')
 a= txt.read()
 phrases = a.split('.')
 #add etiquette function
-"""def add_etiquette(motEtiqs,etiquette):
+def add_etiquette(motEtiqs,etiquette):
 	for etiq in motEtiqs:
 		if etiquette==etiq:
 			break;
 		else:
 			motEtiqs.append(etiquette)
-	return motEtiqs"""
+	return motEtiqs
 
 #append word etiquette function
 def iskif_kif(etq1,etq2):
@@ -43,16 +43,6 @@ for we in mot_listes:
 print(motEtiqs)
 
 		#print(motEtiqs[w[0]])
-"""etqEnrichis=motEtiqs
-for ph in phrases:
-	words=nlp.pos_tag(ph)
-	for w in words:
-		for x in xrange(1,10):
-			pass
-		if 
-		motEtiqs[w[0]]=w[1]
-
-"""
 #1 itération
 
 

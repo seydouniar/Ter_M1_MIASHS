@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import codecs
 from pymining import itemmining
 from pymining import seqmining
