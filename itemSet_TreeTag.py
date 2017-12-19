@@ -6,6 +6,7 @@ txt =codecs.open("Sans_titre.txt",'r','utf-8')
 a=txt.read()
 list_phrase=a.split(".")
 
+result = open("result_item_treetagger.txt",'w')
 # Ajout des etuquette
 def add_etiquette(key,etiquette):
 	key=etiquette
@@ -38,6 +39,8 @@ for phrase in list_phrase:
         mots.append(etq)
     tous_mots.append(mots)
     pprint.pprint(mots)
+result.write(str(tous_mots))
+result.close()
    # cpt+=len(mots)
 
 #enrichissement de l'etiquette
