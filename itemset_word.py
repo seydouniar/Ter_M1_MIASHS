@@ -23,26 +23,26 @@ def iskif_kif(etq1,etq2):
     	if e==etq2:
     		return False
     return True
+try:
+	motEtiqs = {}
+	mot_listes=nlp.pos_tag("")
 
-motEtiqs = {}
-mot_listes=nlp.pos_tag("")
+	for ph in phrases:
+		words=nlp.pos_tag(ph)
+		mot_listes+=words
+	#print(len(mot_listes))
+	for word_etq in mot_listes:
+		motEtiqs[word_etq[0]]=word_etq[1]
+	#print(len(motEtiqs))
 
-for ph in phrases:
-	words=nlp.pos_tag(ph)
-	mot_listes+=words
-#print(len(mot_listes))
-for word_etq in mot_listes:
-	motEtiqs[word_etq[0]]=word_etq[1]
-#print(len(motEtiqs))
-
-for we in mot_listes:
-	print(we)
-	for key in motEtiqs.keys():
-		if we[0]==key and iskif_kif(motEtiqs[key],we[1]):
-			motEtiqs[key] = motEtiqs[key] + "|"+we[1]
-print(motEtiqs)
-
-		#print(motEtiqs[w[0]])
+	for we in mot_listes:
+		print(we)
+		for key in motEtiqs.keys():
+			if we[0]==key and iskif_kif(motEtiqs[key],we[1]):
+				motEtiqs[key] = motEtiqs[key] + "|"+we[1]
+	print(motEtiqs)
+except ValueError:
+		print("error")
 #1 itération
 
 
