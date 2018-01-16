@@ -1,8 +1,8 @@
 import treetaggerwrapper
-
+#from stanfordcorenlp import StanfordCoreNLP
 #import treetagger langages fr
 tagger = treetaggerwrapper.TreeTagger(TAGLANG='fr')
-
+#nlp = StanfordCoreNLP(r'/home/seydou/Bureau/TER_DOC/stanford-corenlp-full-2017-06-09/',lang='fr')
 #init list word
 tous_mots=[]
 
