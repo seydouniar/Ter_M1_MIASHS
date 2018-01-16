@@ -31,6 +31,8 @@ class Test_module(unittest.TestCase):
     def test_fonction_recherche(self):
         """test de la fonction de recherches"""
         self.assertEqual(self.a,5)
+    def test_type(self):
+        self.assertEqual(self.a,5)
 
     def test_fonction_sequence_frequent(self):
         """test de la fonction des sequence frequent"""
