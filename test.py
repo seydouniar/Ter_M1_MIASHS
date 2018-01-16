@@ -32,12 +32,22 @@ class Test_module(unittest.TestCase):
         """test de la fonction de recherches"""
         self.assertEqual(self.a,5)
     def test_type(self):
-        self.assertEqual(self.a,5)
+        l=['m','l','g']
 
-    def test_fonction_sequence_frequent(self):
+        self.assertIn('m',l)
+        self.assertIn('l',l)
+        self.assertIn('g',l)
+        self.assertNotIn('p',l)
+
+    def test_possiblement_correct(self):
+        self.assertTrue()
+    def test_recherche_phrase(self):
         """test de la fonction des sequence frequent"""
         self.assertEqual(self.a,5)
-        
+    def test_recherche_corpus(self):
+        self.assertEqual(self.a,5)
+    def test_pattern_research(self):
+        self.assertEqual(self.a,5)
 
 if __name__=="__main__":
     unittest.main()
