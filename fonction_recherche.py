@@ -28,34 +28,34 @@ def research():
 	len(Corpus)
 	#parcour le corpus
 	for i in range(len(Corpus)):
-            #parcour les phrase
-	    for j in range(len(Corpus[i])):
+		#parcour les phrase
+		print("phrase=",Corpus[i])
+		for j in range(len(Corpus[i])):
+			print("mot=",Corpus[i][j])
 	        #print("MOT:",Corpus[i][j])
-	        l=quel_type(ListeSearch[drap])
-	        drap=0
-	        baton=False
+			l=quel_type(ListeSearch[drap])
+			drap=0
+			baton=False
 	        #tant que les mots dans le corpus sont en commun avec le ListeSearch : on continue !
-	        while (baton==False) and (ListeSearch[drap][2:] in Corpus[i][j+drap][l]):
-	            drap+=1
+			while (baton==False) and (ListeSearch[drap][2:] in Corpus[i][j+drap][l]):
+				print("mot bon=",ListeSearch[drap][2:]," and ",Corpus[i][j+drap][l])
+				drap+=1
 	            #si le compte est bon
-	            if drap ==Enddrap:
-
-	                
-	                Res=[]
-	                
-	                for a in range(drap+1):
-	                    Res+=[Corpus[i][j+a]]
-
-	                ListeResult+=["sentence n",i,Res]
-	                baton=True
-
-	            l=quel_type(ListeSearch[drap])
+				if drap ==Enddrap:
+					Res=[]
+					for a in range(drap+1):
+						Res+=[Corpus[i][j+a]]
+						print("ajout ListeResult",[Corpus[i][j+a]])
+						ListeResult+=["sentence n",i,Res]
+					baton=True
+				l=quel_type(ListeSearch[drap])
 	            #si on est arrivé en fin de phrase avant
-	            if (j+drap)>=len(Corpus[i]):
-	                baton=True
+				if (j+drap)>=len(Corpus[i]):
+					print("fin de phrase trop tot")
+					baton=True
 	            #print (drap,i,j,k,l)
 	            #print(Corpus[i])
-	        drap=0
+			drap=0
 	return ListeResult
 
 
