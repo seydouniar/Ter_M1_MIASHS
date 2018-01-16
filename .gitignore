@@ -1,0 +1,14 @@
+.*/
+_*/
+*.txt
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
