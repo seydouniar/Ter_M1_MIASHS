@@ -1,63 +1,29 @@
 import treetaggerwrapper
-import codecs
-import pprint
 
-txt =codecs.open("Sans_titre.txt",'r','utf-8')
-a=txt.read()
-list_phrase=a.split(".")
-
-result = open("result_item_treetagger.txt",'w')
-# Ajout des etuquette
-def add_etiquette(key,etiquette):
-	key=etiquette
-
-# Verifie l'existance de l'etiquette
-def iskif_kif(etq,etqs):
-    if etq in etqs:
-         return False
-    return True
-#etiquette dict
-motEtiqs = []
-motEtiq_enrichi= {}
-
+#import treetagger langages fr
 tagger = treetaggerwrapper.TreeTagger(TAGLANG='fr')
-cpt=0
 
+#init list word
 tous_mots=[]
-mots_encrichis=[]
-for phrase in list_phrase:
-    #print(phrase)
-    tag_phrase_tmp = tagger.tag_text(phrase)
-    tag_phrase = treetaggerwrapper.make_tags(tag_phrase_tmp)
-    #   print(len(tag_phrase))
-    # tag contains
-    mots =[]
-    print(phrase)
-    for tag in tag_phrase:
-        etq=()
-        etq += (tag.word,tag.lemma,tag.pos)
-        mots.append(etq)
-    tous_mots.append(mots)
-    pprint.pprint(mots)
-result.write(str(tous_mots))
-result.close()
-   # cpt+=len(mots)
 
-#enrichissement de l'etiquette
-"""for ph in tous_mots:
-    for tup in ph:
-        mot={}
-        if not iskif_kif(tup[0],mot.keys()) and not iskif_kif(tup[2],mot.values):
-            add_etiquette(mot[tup[0]],(tup[1],tup[2]))
-        else:
-            l = list(mot.items())
-            l.append(tup[2])
-            print(tuple(l))
-            add_etiquette(mot[tup[0]],tuple(l))
+#extract itemSet function words
+def extract_etq(corpus):
+    list_phrase=corpus.split(".")
+    for phrase in list_phrase:
+        phrase+="."
+        tag_phrase_tmp = tagger.tag_text(phrase)
+        tag_phrase = treetaggerwrapper.make_tags(tag_phrase_tmp)
 
-        motEtiq_enrichi.append(mot)
-pprint.pprint(motEtiq_enrichi)
-"""
+        #les mot d'une phrase
+        mots =[]
+        for tag in tag_phrase:
+            #tuple item for word
+            etq=()
+            etq += (tag.word,tag.lemma,tag.pos)
+            mots.append(etq)
+        tous_mots.append(mots)
+        return tous_mots
+
 
 
 
