@@ -58,7 +58,7 @@ def recherche_corpus(corpus,pattern):
     return resultat
 
 #"Écrire le pattern voulu en suivant la syntaxe suivante :"
-#Exemple 1 : "g:PRO:PER,g:VER:pres,g:ADV"
+# pattern_research(corpus,"g:PRO:PER,g:VER:pres,g:ADV")
 #[0, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')], 1, [('On', 'on', 'PRO:PER'), ('a', 'avoir', 'VER:pres'), ('déjà', 'déjà', 'ADV'), ('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')], 4, [('on', 'on', 'PRO:PER'), ('aime', 'aimer', 'VER:pres'), ('trop', 'trop', 'ADV')], 43, [('on', 'on', 'PRO:PER'), ('retrouve', 'retrouver', 'VER:pres'), ('souvent', 'souvent', 'ADV')], 52, [('se', 'se', 'PRO:PER'), ('prête', 'prêter', 'VER:pres'), ('fort', 'fort', 'ADV')], 63, [('le', 'le', 'PRO:PER'), ('montre', 'montrer', 'VER:pres'), ('très', 'très', 'ADV')], 66, [('y', 'y', 'PRO:PER'), ('a', 'avoir', 'VER:pres'), ('ainsi', 'ainsi', 'ADV')], 78, [('on', 'on', 'PRO:PER'), ('peut', 'pouvoir', 'VER:pres'), ('bien', 'bien', 'ADV')], 82, [('il', 'il', 'PRO:PER'), ('parle', 'parler', 'VER:pres'), ('directement', 'directement', 'ADV')]]
 #"Exemple 2 : m:infini,l:et,g:ADJ"
 #Avec : 'm' pour mot, 'l' pour lemme et 'g' pour groupe nominal "
