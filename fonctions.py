@@ -9,7 +9,7 @@ def quel_type(l):
     elif (l=='g'):
         return 2
     else :
-        print ("error :",mot)
+        print ("error :",l)
         return -1
 
 #cette fonction appelé par recherche_phrase regarde si le morceau de phrase ayant le meme debut que pattern contient le pattern
