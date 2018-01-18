@@ -31,6 +31,7 @@ class Test_module(unittest.TestCase):
 
     def test_item_etiquete(self):
         """test des etiquettes de la fonction itemSet_treetagger"""
+
         l=itm.extract_etq(self.text_tag)
         self.assertEqual(l[0][0][2],'PRO:DEM')
         self.assertEqual(l[0][1][2],'VER:pres')
@@ -50,6 +51,8 @@ class Test_module(unittest.TestCase):
         self.assertEqual(l[0][6][1],'.')
 
     def test_type(self):
+
+        """Test typage de pattern """
         l=['m','l','g']
 
         self.assertIn('m',l)
@@ -58,20 +61,27 @@ class Test_module(unittest.TestCase):
         self.assertNotIn('p',l)
 
     def test_possiblement_correct(self):
+        """test de la fonction possibilté recherche correct"""
+
         self.assertEqual(fct.possiblement_correct(self.morceau,self.patern),
                          (True, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'),
                                  ('assez', 'assez', 'ADV')]))
 
     def test_recherche_phrase(self):
-        """test de la fonction des sequence frequent"""
+        """test de la fonction recherche phrase"""
+
         self.assertEqual(fct.recherche_phrase(self.morceau,self.patern),[('il', 'il', 'PRO:PER'),
                                                                          ('est', 'être', 'VER:pres'),
                                                                          ('assez', 'assez', 'ADV')])
     def test_recherche_corpus(self):
+        """Test de la fnction recherche corpus"""
+
         a = [0, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')],
              1, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')]]
         self.assertEqual(fct.recherche_corpus(self.corpus,self.patern),a)
     def test_pattern_research(self):
+        """Test de la fonction de recherche pattern"""
+        
         a = [0, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')],
              1, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')]]
         self.assertEqual(a,fct.pattern_research(self.corpus,"g:PRO:PER,m:est,g:ADV"))
