@@ -81,7 +81,7 @@ class Test_module(unittest.TestCase):
         self.assertEqual(fct.recherche_corpus(self.corpus,self.patern),a)
     def test_pattern_research(self):
         """Test de la fonction de recherche pattern"""
-        
+
         a = [0, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')],
              1, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')]]
         self.assertEqual(a,fct.pattern_research(self.corpus,"g:PRO:PER,m:est,g:ADV"))

@@ -70,4 +70,3 @@ def pattern_research(corpus,pattern):
     resultat = recherche_corpus(corpus,liste_pattern)
     return resultat
 
-print(pattern_research(corpus,"g:PRO:PER,m:est,g:ADV"))
