@@ -13,21 +13,21 @@ def quel_type(l):
         return -1
 
 #cette fonction appelé par recherche_phrase regarde si le morceau de phrase ayant le meme debut que pattern contient le pattern
-def possiblement_correct(morceau,liste_pattern):
+def possiblement_correct(morceau,pattern):
 
-    if (len(liste_pattern)>len(morceau)):
+    if (len(pattern)>len(morceau)):
         return (False,[])
     else:
-        for  i in range(len(liste_pattern)):
-            indent=quel_type(liste_pattern[i][0])
-            if liste_pattern[i][2:]!=morceau[i][indent]:
+        for  i in range(len(pattern)):
+            indent=quel_type(pattern[i][0])
+            if pattern[i][2:]!=morceau[i][indent]:
                 return (False,[])
-        return (True,morceau[0:len(liste_pattern)])
+        return (True,morceau[0:len(pattern)])
 
 
 #cette fonction de doit etre appeler que par recherche_corpus!
 #elle permet de chercher le pattern dans une phrase
-def recherche_phrase(phrase,liste_pattern):
+def recherche_phrase(phrase,pattern):
     resultat=[]
     for i in range(len(phrase)) :
         e=pattern[0]
@@ -35,7 +35,7 @@ def recherche_phrase(phrase,liste_pattern):
         indent=quel_type(e[0])
 
         if (phrase[i][indent]==e[2:]):
-            boolean,res=possiblement_correct(phrase[i:],liste_pattern)
+            boolean,res=possiblement_correct(phrase[i:],pattern)
             if boolean==True:
                 resultat+=res
     return resultat
@@ -47,11 +47,11 @@ def recherche_phrase(phrase,liste_pattern):
 
 #cette fonction de doit etre appeler que par pattern_research! 
 #elle permet de chercher par phrase dans le corpus
-def recherche_corpus(corpus,liste_pattern):
+def recherche_corpus(corpus,pattern):
     print("recherche_corpus")
     resultat=[]
     for i in range(len(corpus)) :
-        res=recherche_phrase(corpus[i],liste_pattern)
+        res=recherche_phrase(corpus[i],pattern)
         if len(res)>0:
             
             resultat+=[i,res]
