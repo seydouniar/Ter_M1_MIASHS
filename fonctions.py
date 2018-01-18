@@ -22,6 +22,7 @@ def possiblement_correct(morceau,pattern):
             indent=quel_type(pattern[i][0])
             if pattern[i][2:]!=morceau[i][indent]:
                 return (False,[])
+
         return (True,morceau[0:len(pattern)])
 
 

@@ -9,7 +9,8 @@ class Test_module(unittest.TestCase):
     def setUp(self):
         """initialisation des tests."""
         self.text_tag = "c'est un texte en français."
-        self.patern = "g:PRO:PER', 'm:est', 'g:ADV"
+        self.patern = "g:PRO:PER,m:est,g:ADV"
+        self.patern = self.patern.split(',')
         self.morceau = [('il', 'il', 'PRO:PER'),
                         ('est', 'être', 'VER:pres'),
                         ('assez', 'assez', 'ADV'),
@@ -67,9 +68,13 @@ class Test_module(unittest.TestCase):
                                                                          ('est', 'être', 'VER:pres'),
                                                                          ('assez', 'assez', 'ADV')])
     def test_recherche_corpus(self):
-        self.assertEqual(self.a,5)
+        a = [0, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')],
+             1, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')]]
+        self.assertEqual(fct.recherche_corpus(self.corpus,self.patern),a)
     def test_pattern_research(self):
-        self.assertEqual(self.patern,fct.pattern_research(self.corpus,"g:PRO:PER,m:est,g:ADV"))
+        a = [0, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')],
+             1, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'), ('assez', 'assez', 'ADV')]]
+        self.assertEqual(a,fct.pattern_research(self.corpus,"g:PRO:PER,m:est,g:ADV"))
 
 if __name__=="__main__":
     unittest.main()
