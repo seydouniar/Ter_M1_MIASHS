@@ -1,5 +1,7 @@
 import unittest
 import itemSet_TreeTag as itm
+import fonctions as fct
+import resultImport
 
 
 class Test_module(unittest.TestCase):
@@ -7,8 +9,25 @@ class Test_module(unittest.TestCase):
     def setUp(self):
         """initialisation des tests."""
         self.text_tag = "c'est un texte en français."
-
+        self.patern = "g:PRO:PER', 'm:est', 'g:ADV"
+        self.morceau = [('il', 'il', 'PRO:PER'),
+                        ('est', 'être', 'VER:pres'),
+                        ('assez', 'assez', 'ADV'),
+                        ('difficile', 'difficile', 'ADJ'),
+                        ("d'", 'de', 'PRP'),
+                        ('ajouter', 'ajouter', 'VER:infi'),
+                        ('des', 'du', 'PRP:det'),
+                        ('lignes', 'ligne', 'NOM'),
+                        ('concernant', 'concerner', 'VER:ppre'),
+                        ('2001', '@card@', 'NUM'),
+                        (',', ',', 'PUN'), ("l'", 'le', 'DET:ART'),
+                        ('Odyssée', 'Odyssée', 'NAM'),
+                        ('de', 'de', 'PRP'),
+                        ("l'", 'le', 'DET:ART'),
+                        ('espace', 'espace', 'NOM')]
         self.a=5
+        self.corpus = resultImport.result_item_set
+
     def test_item_etiquete(self):
         """test des etiquettes de la fonction itemSet_treetagger"""
         l=itm.extract_etq(self.text_tag)
@@ -28,9 +47,7 @@ class Test_module(unittest.TestCase):
         self.assertEqual(l[0][4][1],'en')
         self.assertEqual(l[0][5][1],'français')
         self.assertEqual(l[0][6][1],'.')
-    def test_fonction_recherche(self):
-        """test de la fonction de recherches"""
-        self.assertEqual(self.a,5)
+
     def test_type(self):
         l=['m','l','g']
 
@@ -40,14 +57,19 @@ class Test_module(unittest.TestCase):
         self.assertNotIn('p',l)
 
     def test_possiblement_correct(self):
-        self.assertTrue()
+        self.assertEqual(fct.possiblement_correct(self.morceau,self.patern),
+                         (True, [('il', 'il', 'PRO:PER'), ('est', 'être', 'VER:pres'),
+                                 ('assez', 'assez', 'ADV')]))
+
     def test_recherche_phrase(self):
         """test de la fonction des sequence frequent"""
-        self.assertEqual(self.a,5)
+        self.assertEqual(fct.recherche_phrase(self.morceau,self.patern),[('il', 'il', 'PRO:PER'),
+                                                                         ('est', 'être', 'VER:pres'),
+                                                                         ('assez', 'assez', 'ADV')])
     def test_recherche_corpus(self):
         self.assertEqual(self.a,5)
     def test_pattern_research(self):
-        self.assertEqual(self.a,5)
+        self.assertEqual(self.patern,fct.pattern_research(self.corpus,"g:PRO:PER,m:est,g:ADV"))
 
 if __name__=="__main__":
     unittest.main()

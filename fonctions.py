@@ -63,10 +63,10 @@ def recherche_corpus(corpus,pattern):
 #"Exemple 2 : m:infini,l:et,g:ADJ"
 #Avec : 'm' pour mot, 'l' pour lemme et 'g' pour groupe nominal "
 def pattern_research(corpus,pattern):
-
     resultat=[]
     #note : on ne peut pas chercher une virgule ça peut poser probleme!
     liste_pattern = pattern.split(',')
     resultat = recherche_corpus(corpus,liste_pattern)
     return resultat
 
+print(pattern_research(corpus,"g:PRO:PER,m:est,g:ADV"))
