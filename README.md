@@ -1,4 +1,4 @@
-# Ter_M1_MIASHS
+﻿# Ter_M1_MIASHS
 - 0 installation git 
 	- installation:
 		- https://www.atlassian.com/git/tutorials/install-git
@@ -24,3 +24,7 @@
 		- changer le path de mongo avec (mongod --dbpath Fichiers)
 		- Importer la base ( mongoimport --db dico -- collection dictionnaires --file files/mots_expressions.json). Attention lors d'un push supprimer les fichiers générés par mongo.
 
+
+
+Liens Word2Vec :
+- https://radimrehurek.com/gensim/models/word2vec.html
