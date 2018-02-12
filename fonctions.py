@@ -67,4 +67,3 @@ def pattern_research(corpus,pattern):
     liste_pattern = pattern.split(',')
     resultat = recherche_corpus(corpus,liste_pattern)
     return resultat
-
