@@ -1,6 +1,7 @@
 .*/
 _*/
 *.txt
+*.pyc
 env/
 bin/
 build/
