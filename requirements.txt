@@ -34,7 +34,7 @@ nbconvert==5.3.1
 nbformat==4.4.0
 networkx==1.10
 nltk==3.2.5
-notebook==5.2.2
+notebook==6.1.5
 numpy==1.13.3
 omega==0.0.11
 pandocfilters==1.4.2
