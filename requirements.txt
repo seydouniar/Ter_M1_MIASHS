@@ -47,7 +47,7 @@ polytope==0.2.1
 prompt-toolkit==1.0.15
 psutil==5.4.0
 ptyprocess==0.5.2
-py==1.5.2
+py==1.10.0
 pyasn1==0.1.9
 pycrypto==2.6.1
 PyDictionary==1.5.2
